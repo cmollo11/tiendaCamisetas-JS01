@@ -43,7 +43,7 @@ switch(opcion){
 
 let stock = 120;
 
-for(let i=0;i<120;i++){
+for(let i=0;i<stock;i++){
 
     console.log("ciclo for: " +i);  
 }
