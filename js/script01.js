@@ -109,52 +109,54 @@ carrito.push(camisetaGloriosa[2]);
 console.log(carrito);
 
 
+// forEach
+
+BBDD.forEach((BBDD)=>{
+    console.log(BBDD)
+})
+
 // carrito interactivo
-
-
+ 
+ 
 let elegirProducto =  Number(prompt("Elegí tu camiseta Gloriosa 1-Maradona 2-Cruyff 3-Ronaldo 4-Zidane"));
-
+ 
 switch(elegirProducto){
-
-    case 1:
+ 
+    case 1 :
         alert("Elegiste la camiseta del Diego");
         console.log("eligió la camiseta de Maradona");
     break;
-    
+   
     case 2:
         alert("Elegiste la camiseta de Cruyff");
         console.log("eligió la camiseta de Cruyff")
     break;
-
+ 
     case 3:
         alert("Elegiste la camiseta de Ronaldo")
         console.log("eligió la camiseta de Ronaldo")
     break;
-
+ 
     case 4:
         alert("Elegiste la camiseta de Zidane")
         console.log("eligió la camiseta de Zidane")
     break;
-
-    
+ 
+   
     default:
         alert("No elegiste nada")
         console.log("no eligió nada")
     break;
 }
-
-
-
-function compraCliente(camisetaGloriosa){
-    carrito.push(BBDD[camisetaGloriosa]);
+ 
+ 
+ 
+function compraCliente(camisetaElegida){
+    carrito.push(camisetaGloriosa[camisetaElegida]);
 }
-
+ 
 compraCliente(elegirProducto);
 console.log(elegirProducto);
-
-
-
-
 
 
 
