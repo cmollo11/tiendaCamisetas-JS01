@@ -3,7 +3,7 @@
 
 let inputUsser = prompt("ingrese su cupón de descuento");
 
-if(cupón==inputUsser){
+if(cupón===inputUsser){
 
    console.log("cupón ingresado correctamente");
    alert("cupón ingresado correctamente")
@@ -49,14 +49,14 @@ for(let i=0;i<stock;i++){
 } */
 
 
-/****************************** Hasta acá 1ra Entrega/
-/******************************/
-/******************************/
+/*********************** Hasta acá 1ra Entrega//***********************/
+
+
 
 
 // Matriz de productos
 
-class Camiseta {
+/* class Camiseta {
 
     constructor(id, nombre, precio){
         this.id = id;
@@ -118,7 +118,7 @@ BBDD.forEach((BBDD)=>{
 // carrito interactivo
  
  
-let elegirProducto =  Number(prompt("Elegí tu camiseta Gloriosa 1-Maradona 2-Cruyff 3-Ronaldo 4-Zidane"));
+const elegirProducto =  Number(prompt("Elegí tu camiseta Gloriosa 1-Maradona 2-Cruyff 3-Ronaldo 4-Zidane"));
  
 switch(elegirProducto){
  
@@ -157,6 +157,62 @@ function compraCliente(camisetaElegida){
  
 compraCliente(elegirProducto);
 console.log(elegirProducto);
+ */
 
 
+/*********************** Hasta acá 2da Entrega//***********************/
 
+// Array de objetos
+
+const productos = [{
+    id: 1,
+    nombre: "camisetaArgentina",
+    precio: 18000,
+    imagen: "img/Argentina.png"
+  },  
+  
+  {
+    id: 2,
+    nombre: "camisetaBrasil",
+    precio: 18000,
+    imagen: "img/Brasil.png"
+  },
+  
+  {
+    id: 3,
+    nombre: "camisetaFrancia",
+    precio: 18000,
+    imagen: "img/Francia.jpg"
+  },
+  
+  {
+    id:4,
+    nombre: "camisetaHolanda",
+    precio: 18000,
+    imagen: "img/Holanda.png"
+  },
+
+]
+
+
+/// for each para crear elemento
+
+
+let camisetasTodas = document.getElementById("camisetasTodas")
+
+
+productos.forEach((product)=>{
+    let content = document.createElement("div")
+    content.className="thumbnail"
+    content.innerHTML = `
+            <h3>${product.nombre}</h3>
+            <p>${product.precio}</p>
+            <img src="${product.imagen}">
+    `;
+  
+      
+    camisetasTodas.append(content)
+  
+    
+  
+  })
