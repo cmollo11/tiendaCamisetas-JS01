@@ -187,7 +187,7 @@ const productos = [{
   
   {
     id:4,
-    nombre: "camiseta de Holanda",
+    nombre: "camiseta de  Holanda",
     precio: 18000,
     imagen: "img/Holanda.png"
   },
@@ -203,25 +203,29 @@ let camisetasTodas = document.getElementById("camisetasTodas")
 
 productos.forEach((product)=>{
     let content = document.createElement("div")
-    content.className="cardCamiseta"
     content.innerHTML = `
             <img src="${product.imagen}">
             <h3>${product.nombre}</h3>
             <p>${product.precio}</p>
             
-
-    `;
+            `;
   
     camisetasTodas.append(content)
   
     let comprar = document.createElement("button")
     comprar.innerText = "comprar"
     
-
-    
     content.append(comprar)
 
+    comprar.addEventListener("click",()=>{
 
+        console.log("probando click")
+
+        
+
+    })
 
   
   })
+
+
