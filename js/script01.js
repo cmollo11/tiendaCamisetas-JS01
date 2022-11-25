@@ -166,28 +166,28 @@ console.log(elegirProducto);
 
 const productos = [{
     id: 1,
-    nombre: "camisetaArgentina",
+    nombre: "camiseta de Argentina",
     precio: 18000,
     imagen: "img/Argentina.png"
   },  
   
   {
     id: 2,
-    nombre: "camisetaBrasil",
+    nombre: "camiseta de Brasil",
     precio: 18000,
     imagen: "img/Brasil.png"
   },
   
   {
     id: 3,
-    nombre: "camisetaFrancia",
+    nombre: "camiseta de Francia",
     precio: 18000,
     imagen: "img/Francia.jpg"
   },
   
   {
     id:4,
-    nombre: "camisetaHolanda",
+    nombre: "camiseta de Holanda",
     precio: 18000,
     imagen: "img/Holanda.png"
   },
@@ -203,16 +203,25 @@ let camisetasTodas = document.getElementById("camisetasTodas")
 
 productos.forEach((product)=>{
     let content = document.createElement("div")
-    content.className="thumbnail"
+    content.className="cardCamiseta"
     content.innerHTML = `
+            <img src="${product.imagen}">
             <h3>${product.nombre}</h3>
             <p>${product.precio}</p>
-            <img src="${product.imagen}">
+            
+
     `;
   
-      
     camisetasTodas.append(content)
   
+    let comprar = document.createElement("button")
+    comprar.innerText = "comprar"
     
+
+    
+    content.append(comprar)
+
+
+
   
   })
