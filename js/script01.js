@@ -162,6 +162,9 @@ console.log(elegirProducto);
 
 /*********************** Hasta acá 2da Entrega//***********************/
 
+
+/*********************** Desde acá 3ra Entrega//***********************/
+
 // Array de objetos
 
 const productos = [{
@@ -195,11 +198,12 @@ const productos = [{
 ]
 
 
-/// for each para crear elemento
+/// for each y funciones para crear elemento(prodcutos)
 
 
 let camisetasTodas = document.getElementById("camisetasTodas")
 
+let carrito = []
 
 productos.forEach((product)=>{
     let content = document.createElement("div")
@@ -207,8 +211,7 @@ productos.forEach((product)=>{
             <img src="${product.imagen}">
             <h3>${product.nombre}</h3>
             <p>${product.precio}</p>
-            
-            `;
+        `;
   
     camisetasTodas.append(content)
   
@@ -219,13 +222,56 @@ productos.forEach((product)=>{
 
     comprar.addEventListener("click",()=>{
 
-        console.log("probando click")
+        console.log("probando click Comprar")
 
+        carrito.push(
+            {
+              id: product.id,
+              nombre: product.nombre,
+              precio: product.precio                 
+            }
+        )
+            
         
+        console.log(carrito)
 
     })
 
-  
-  })
+})
 
+
+///  creando Carrito de compras
+
+const verCarrito = document.getElementById("carrito")
+
+verCarrito.addEventListener("click",()=>{
+
+    console.log("probando click Carrito")
+
+
+    let content = document.createElement("div")
+    content.innerHTML = ``;
+
+    verCarrito.append(content)
+    
+    carrito.forEach((product)=>{
+
+        let carritoContent = document.createElement("div")
+        carritoContent.innerHTML = `
+            <h3>${product.nombre}</h3>
+            <p>${product.precio}</p>
+        `;
+
+        verCarrito.append(carritoContent)
+
+        
+
+        localStorage.setItem("comprado", JSON.stringify(carrito));
+
+        /* guardo en LocalStorage las compras del carrito */
+
+    })
+     
+
+})
 
